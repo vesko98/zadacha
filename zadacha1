@@ -1,0 +1,60 @@
+function tradeCommissions(input){
+let town = input[0];
+let sells = Number(input[1]);
+let result = -1;
+
+if(town == "Sofia"){
+    if (sells >= 0 && sells <= 500){ 
+    result =  0.05;
+}
+    else if (sells >= 500 && sells <= 1000){
+        result =0.07    }
+    else if(sells > 1000 && sells <= 10000){
+        result = 0.08;
+    }
+    else if(sells > 10000){
+        result = 0.12;
+    }
+}
+   else if(town == "Varna"){
+        if (sells >= 0 && sells <= 500){ 
+        result = 0.045;
+    }
+        else if (sells >= 500 && sells <= 1000){
+            result = 0.075;
+        }
+        else if(sells > 1000 && sells <= 10000){
+            result = 0.10;
+        }
+        else if(sells > 10000){
+            result = 0.13;
+        }
+    }
+       else if(town == "Plovdiv"){
+            if (sells >= 0 && sells <= 500){ 
+            result =  0.055;
+        }
+            else if (sells >= 500 && sells <= 1000){
+                result =  0.08;
+            }
+            else if(sells > 1000 && sells <= 10000){
+                result =  0.12;
+            }
+            else if(sells > 10000){
+                result =  0.145;
+            }
+            
+        }
+        if(result > 0){
+            result = result * sells;
+            console.log(result.toFixed(2));
+        }
+        
+        else {
+            console.log("error");
+        }
+
+
+}
+tradeCommissions(["Plov",
+"499.99"])
